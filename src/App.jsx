@@ -11,13 +11,35 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
+import Swal from "sweetalert2";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
 
 function App() {
-  //State to show the password with eye icon
+  //Create password state to show text or hide text in the password field
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
+
+  //Create function to show alerts in the registration proccess
+  const showSuccessAlert = () => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your registration was successful",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  const showErrorAlert = () => {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Error during registration",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   return (
     <div className="App">
@@ -60,8 +82,12 @@ function App() {
           </Grid>
         </Grid>
         <Stack spacing={2} sx={{ m: 2 }} direction="row">
-          <Button variant="contained">Ingresar</Button>
-          <Button variant="outlined">Cancelar</Button>
+          <Button variant="contained" onClick={showSuccessAlert}>
+            Ingresar
+          </Button>
+          <Button variant="outlined" onClick={showErrorAlert}>
+            Cancelar
+          </Button>
         </Stack>
       </Box>
     </div>
