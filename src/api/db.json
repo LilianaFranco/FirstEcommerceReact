@@ -35,6 +35,26 @@
       "description": "Zapatillas de ultima generacion para el deporte",
       "category": "urbanas",
       "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg"
+    },
+    {
+      "name": [
+        "Skechers"
+      ],
+      "price": 200,
+      "img": [
+        "https://cdn.baguer.co/uploads/2023/04/bkmn-tenis-fresh-finesse-skechers-negro-117464NG.jpg_7pgCODimJSMhrCfGAtIP70WDvenPR21hVOU8509AU7CRJaN9aG.jpg"
+      ],
+      "id": 5
+    },
+    {
+      "name": [
+        "Jordan"
+      ],
+      "price": 500,
+      "img": [
+        "https://www.si.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_620%2Cx_601%2Cy_623/MTk0MzI2Njg2MjQ0ODA4MTk3/jordan-11.jpg"
+      ],
+      "id": 6
     }
   ]
 }
