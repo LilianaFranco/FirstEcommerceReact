@@ -11,14 +11,16 @@ export const Products = () => {
   });
   const [isProductCreated, setIsProductCreated] = useState(false);
   const [isProductDeleted, setIsProductDeleted] = useState(false);
+  const [isProductUpdated, setIsProductUpdated] = useState(false);
 
   //Bring the items from DB only once. All querys need to go inside UseEffect
   useEffect(() => {
     setIsProductCreated(false);
     setIsProductDeleted(false);
+    setIsProductUpdated(false);
     const products = axios.get("http://localhost:5000/products");
     products.then((res) => setItems(res.data)).catch((err) => console.log(err));
-  }, [isProductCreated, isProductDeleted]);
+  }, [isProductCreated, isProductDeleted, isProductUpdated]);
 
   //Send form information to API
   const handleSubmit = (e) => {
@@ -51,6 +53,14 @@ export const Products = () => {
     setIsProductDeleted(true);
   };
 
+  //Update an item
+  const updateById = (id) => {
+    axios.patch(`http://localhost:5000/products/${id}`, {
+      price: 600,
+      name: "zapas x",
+    });
+    setIsProductUpdated(true);
+  };
   console.log(items);
 
   return (
@@ -67,6 +77,13 @@ export const Products = () => {
             }}
           >
             Eliminar producto
+          </button>
+          <button
+            onClick={() => {
+              updateById(element.id);
+            }}
+          >
+            Guardar cambios
           </button>
         </div>
       ))}
