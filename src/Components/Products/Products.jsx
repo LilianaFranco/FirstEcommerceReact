@@ -7,11 +7,9 @@ export const Products = () => {
   //Bring the items from DB only once. All querys need to go inside UseEffect
   useEffect(() => {
     const productos = axios.get("http://localhost:5000/products");
-    setTimeout(() => {
-      productos
-        .then((res) => setItems(res.data))
-        .catch((err) => console.log(err));
-    }, 2000);
+    productos
+      .then((res) => setItems(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
   console.log(items);
