@@ -1,3 +1,4 @@
+import { width } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -9,12 +10,15 @@ export const Products = () => {
     img: "",
   });
   const [isProductCreated, setIsProductCreated] = useState(false);
+  const [isProductDeleted, setIsProductDeleted] = useState(false);
 
   //Bring the items from DB only once. All querys need to go inside UseEffect
   useEffect(() => {
+    setIsProductCreated(false);
+    setIsProductDeleted(false);
     const products = axios.get("http://localhost:5000/products");
     products.then((res) => setItems(res.data)).catch((err) => console.log(err));
-  }, [isProductCreated]);
+  }, [isProductCreated, isProductDeleted]);
 
   //Send form information to API
   const handleSubmit = (e) => {
@@ -41,13 +45,30 @@ export const Products = () => {
     setNewProduct({ ...newProduct, [e.target.name]: [e.target.value] });
   };
 
+  //Delete an item from Products
+  const deleteById = (id) => {
+    axios.delete(`http://localhost:5000/products/${id}`);
+    setIsProductDeleted(true);
+  };
+
   console.log(items);
 
   return (
     //Render each product
     <div>
       {items.map((element) => (
-        <h1 key={element.id}>{element.name}</h1>
+        <div key={element.id}>
+          <h2>{element.name}</h2>
+          <h3>{element.price}</h3>
+          <img src={element.img} alt="" style={{ width: "200px" }} />
+          <button
+            onClick={() => {
+              deleteById(element.id);
+            }}
+          >
+            Eliminar producto
+          </button>
+        </div>
       ))}
 
       <form action="" onSubmit={handleSubmit}>
