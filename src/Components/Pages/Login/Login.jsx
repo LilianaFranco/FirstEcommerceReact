@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -12,12 +12,24 @@ import {
   TextField,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import Swal from "sweetalert2";
 
-export const Login = ({
-  showPassword,
-  handleClickShowPassword,
-  showSuccessAlert,
-}) => {
+export const Login = ({}) => {
+  const [showPassword, setShowPassword] = useState(false);
+  //Hide or show password
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+
+  //   Create function to show alerts in the registration proccess
+  const showSuccessAlert = () => {
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your registration was successful",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   return (
     <div>
       <Box
