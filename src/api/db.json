@@ -2,8 +2,8 @@
   "products": [
     {
       "id": 1,
-      "name": "nike 360",
-      "price": 20500,
+      "name": "zapas X",
+      "price": 6000,
       "stock": 9,
       "description": "Zapatillas de ultima generacion para el deporte",
       "category": "deportivas",
@@ -11,8 +11,8 @@
     },
     {
       "id": 2,
-      "name": "wilson advance",
-      "price": 14500,
+      "name": "zapas X",
+      "price": 6000,
       "stock": 16,
       "description": "Ultra livianas y cuentan con camara de aire",
       "category": "deportivas",
@@ -29,16 +29,16 @@
     },
     {
       "id": 4,
-      "name": "Jaguar",
-      "price": 17800,
+      "name": "zapas X",
+      "price": 6000,
       "stock": 7,
       "description": "Zapatillas de ultima generacion para el deporte",
       "category": "urbanas",
       "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg"
     },
     {
-      "name": ["Jordan"],
-      "price": 500,
+      "name": "zapas X",
+      "price": 6000,
       "img": [
         "https://www.si.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_620%2Cx_601%2Cy_623/MTk0MzI2Njg2MjQ0ODA4MTk3/jordan-11.jpg"
       ],

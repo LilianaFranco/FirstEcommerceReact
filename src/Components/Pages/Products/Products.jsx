@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ProductCard } from "../../Common/ProductCard";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
+import { Navbar } from "../../Layout/Navbar/Navbar";
 
 export const Products = ({ items }) => {
   console.log(items);
@@ -47,6 +48,7 @@ export const Products = ({ items }) => {
   return (
     //Render each product
     <div>
+      <Navbar />
       <Link to="/create">
         <button>Agregar producto</button>
       </Link>

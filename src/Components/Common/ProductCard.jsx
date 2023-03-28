@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 
 export const ProductCard = ({ element }) => {
   console.log(element);
@@ -27,8 +28,16 @@ export const ProductCard = ({ element }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Ver detalle</Button>
-          <Button size="small">Eliminar</Button>
+          <Link to={`/productDetail/${element.id}`}>
+            <Button
+              onClick={() => {
+                <ProductDetail element={element} />;
+              }}
+              size="small"
+            >
+              Ver detalle
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     </div>
