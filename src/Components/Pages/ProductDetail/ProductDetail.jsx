@@ -22,7 +22,7 @@ const ProductDetail = ({ product }) => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {product.name}
+            {product?.name}
           </Typography>
         </CardContent>
         <CardActions>

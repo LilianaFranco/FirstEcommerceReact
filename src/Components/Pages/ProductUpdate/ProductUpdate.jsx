@@ -1,6 +1,7 @@
 import React from "react";
 
 export const ProductUpdate = ({
+  product,
   handleSubmit,
   productSelected,
   setProductSelected,
@@ -10,7 +11,7 @@ export const ProductUpdate = ({
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          defaultValue={productSelected.name}
+          defaultValue={product?.name}
           onChange={(e) =>
             setProductSelected({
               ...productSelected,
@@ -20,7 +21,7 @@ export const ProductUpdate = ({
         />
         <input
           type="text"
-          defaultValue={productSelected.price}
+          defaultValue={product?.price}
           onChange={(e) =>
             setProductSelected({
               ...productSelected,
@@ -30,7 +31,7 @@ export const ProductUpdate = ({
         />
         <input
           type="text"
-          defaultValue={productSelected.img}
+          defaultValue={product?.img}
           onChange={(e) =>
             setProductSelected({
               ...productSelected,
