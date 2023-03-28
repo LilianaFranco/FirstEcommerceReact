@@ -1,4 +1,7 @@
-export const CreateProduct = (handleSubmit, handleChange) => {
+import { Link } from "react-router-dom";
+import { Products } from "../Products/Products";
+
+export const CreateProduct = ({ handleSubmit, handleChange }) => {
   return (
     <form action="" onSubmit={handleSubmit}>
       <input

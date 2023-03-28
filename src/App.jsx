@@ -1,9 +1,9 @@
 import "./App.css";
 import { Login } from "./Components/Pages/Login/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Products } from "./Components/Pages/Products/Products";
-import { Navbar } from "./Components/Layout/Navbar/Navbar";
 import { CreateProduct } from "./Components/Pages/CreateProduct/CreateProduct";
+import { ProductContainer } from "./Components/Pages/Products/Product.container";
+import ProductDetailContainer from "./Components/Pages/ProductDetail/ProductDetail.container";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path="" element={<Login />} />
         <Route path="/create" element={<CreateProduct />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<h1>I'm the cart</h1>} />
+        <Route path="/products" element={<ProductContainer />} />
+        <Route path="/productDetail/:id" element={<ProductDetailContainer />} />
         <Route path="*" element={<h1>Not found</h1>} />
       </Routes>
     </BrowserRouter>

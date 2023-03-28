@@ -1,4 +1,5 @@
 import React from "react";
+import { createProduct } from "../../../services/productService";
 
 export const CreateProductContainer = () => {
   const [newProduct, setNewProduct] = useState({
@@ -27,7 +28,7 @@ export const CreateProductContainer = () => {
     };
 
     //Send to API
-    axios.post("http://localhost:5000/products", data);
+    createProduct(data);
     //create.then((res) => console.log(res)).catch((err) => console.log(err)); If I need to manage the post errors
 
     //Inform there is a new product to render
@@ -43,7 +44,7 @@ export const CreateProductContainer = () => {
   return (
     //Render each product
     <div>
-      <CreateProduct handleSubmit={handleSubmit} handleChange={handleChange} />
+      <createProduct handleSubmit={handleSubmit} handleChange={handleChange} />
     </div>
   );
 };
