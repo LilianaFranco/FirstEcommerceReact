@@ -1,24 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { updateProduct } from "../../../services/productService";
+import {
+  getProductById,
+  updateProduct,
+} from "../../../services/productService";
 import ProductDetail from "./ProductDetail";
 
 const ProductDetailContainer = () => {
   const [product, setProduct] = useState({});
-  const [showForm, setShowform] = useState([]);
+  const [showForm, setShowform] = useState([false]);
+  const [isUpdated, setIsUpdated] = useState(false);
+  const [productSelected, setProductSelected] = useState({
+    name: product.name,
+    price: product.price,
+    img: product.img,
+  });
 
   const { id } = useParams();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/products/${id}`)
-      .then((res) => setProduct(res.data));
-  }, []);
+    setIsUpdated(false);
+    let producto = getProductById(id);
+    producto.then((res) => setProduct(res.data));
+  }, [isUpdated]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateProduct(id, productSelected);
+    setIsUpdated(true);
+  };
 
   return (
     <div>
-      <ProductDetail product={product} />
+      <ProductDetail
+        product={product}
+        showForm={showForm}
+        setShowForm={setShowform}
+        handleSubmit={handleSubmit}
+        productSelected={productSelected}
+        setProductSelected={setProductSelected}
+      />
     </div>
   );
 };

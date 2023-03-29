@@ -1,16 +1,18 @@
+import React from "react";
+
 export const CreateProduct = ({ handleSubmit, handleChange }) => {
   return (
     <form action="" onSubmit={handleSubmit}>
       <input
         type="text"
         name="name"
-        placeholder="Nombre del producto"
+        placeholder="nombre del producto"
         onChange={handleChange}
       />
       <input
         type="text"
         name="price"
-        placeholder="Precio del producto"
+        placeholder="precio del producto"
         onChange={handleChange}
       />
       <input
@@ -19,6 +21,7 @@ export const CreateProduct = ({ handleSubmit, handleChange }) => {
         placeholder="url de la imagen"
         onChange={handleChange}
       />
+
       <button type="submit">Crear</button>
     </form>
   );

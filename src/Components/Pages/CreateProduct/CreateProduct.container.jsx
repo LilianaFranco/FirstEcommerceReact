@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { createProduct } from "../../../services/productService";
+import { CreateProduct } from "./CreateProduct";
 
 export const CreateProductContainer = () => {
   const [newProduct, setNewProduct] = useState({
@@ -7,44 +9,30 @@ export const CreateProductContainer = () => {
     price: "",
     img: "",
   });
-  const [isProductCreated, setIsProductCreated] = useState(false);
 
-  //Bring the items from DB only once. All querys need to go inside UseEffect
-  useEffect(() => {
-    setIsProductCreated(false);
-    const products = axios.get("http://localhost:5000/products");
-    products.then((res) => setItems(res.data)).catch((err) => console.log(err));
-  }, [isProductCreated]);
+  const navigate = useNavigate();
 
-  //Send form information to API
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    //Prepare data for Database
     let data = {
       name: newProduct.name,
       price: Number(newProduct.price),
       img: newProduct.img,
     };
+    console.log(data);
 
-    //Send to API
-    createProduct(data);
-    //create.then((res) => console.log(res)).catch((err) => console.log(err)); If I need to manage the post errors
-
-    //Inform there is a new product to render
-    setIsProductCreated(true);
-    console.log(setIsProductCreated);
+    const create = createProduct(data);
+    create.then((res) => console.log(res)).catch((err) => console.log(err));
+    navigate("/products");
   };
 
-  //Save input information in the states
   const handleChange = (e) => {
-    setNewProduct({ ...newProduct, [e.target.name]: [e.target.value] });
+    setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
   };
 
   return (
-    //Render each product
     <div>
-      <createProduct handleSubmit={handleSubmit} handleChange={handleChange} />
+      <CreateProduct handleSubmit={handleSubmit} handleChange={handleChange} />
     </div>
   );
 };

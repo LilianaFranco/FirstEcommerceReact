@@ -5,6 +5,11 @@ export const getProducts = () => {
   return productos;
 };
 
+export const getProductById = (id) => {
+  let producto = productInstance.get(`http://localhost:5000/products/${id}`);
+  return producto;
+};
+
 export const deleteProductById = (id) => {
   return productInstance.delete(`/${id}`);
 };
