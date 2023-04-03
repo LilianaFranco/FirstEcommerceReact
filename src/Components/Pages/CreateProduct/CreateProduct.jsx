@@ -1,6 +1,7 @@
 import React from "react";
 
 export const CreateProduct = ({ handleSubmit, handleChange }) => {
+  console.log();
   return (
     <form action="" onSubmit={handleSubmit}>
       <input
@@ -21,7 +22,6 @@ export const CreateProduct = ({ handleSubmit, handleChange }) => {
         placeholder="url de la imagen"
         onChange={handleChange}
       />
-
       <button type="submit">Crear</button>
     </form>
   );
