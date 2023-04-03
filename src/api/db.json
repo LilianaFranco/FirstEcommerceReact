@@ -37,7 +37,7 @@
       "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg"
     },
     {
-      "name": "Rojas",
+      "name": "Jordan",
       "price": 6000,
       "img": [
         "https://www.si.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_620%2Cx_601%2Cy_623/MTk0MzI2Njg2MjQ0ODA4MTk3/jordan-11.jpg"
@@ -49,6 +49,12 @@
       "price": 350,
       "img": "https://cdn.shopify.com/s/files/1/0200/1122/1092/products/142fb738-193f-4514-a0ba-6fe009f46915_1296x.jpg?v=1667405650",
       "id": 7
+    },
+    {
+      "name": "Bubble gummers",
+      "price": 140,
+      "img": "https://cdn.shopify.com/s/files/1/0506/4550/0055/products/002558_4.jpg?v=1647395313",
+      "id": 8
     }
   ]
 }
