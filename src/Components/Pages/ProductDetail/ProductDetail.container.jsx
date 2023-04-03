@@ -20,6 +20,7 @@ const ProductDetailContainer = () => {
 
   useEffect(() => {
     setIsUpdated(false);
+    setShowform(false);
     let producto = getProductById(id);
     producto.then((res) => setProduct(res.data));
   }, [isUpdated]);

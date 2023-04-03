@@ -58,7 +58,7 @@ const ProductDetail = ({
             onChange={(e) =>
               setProductSelected({
                 ...productSelected,
-                name: e.target.value,
+                price: e.target.value,
               })
             }
           />
@@ -68,7 +68,7 @@ const ProductDetail = ({
             onChange={(e) =>
               setProductSelected({
                 ...productSelected,
-                name: e.target.value,
+                img: e.target.value,
               })
             }
           />
