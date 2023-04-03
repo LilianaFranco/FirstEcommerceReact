@@ -1,16 +1,19 @@
-export const CreateProduct = (handleSubmit, handleChange) => {
+import React from "react";
+
+export const CreateProduct = ({ handleSubmit, handleChange }) => {
+  console.log();
   return (
     <form action="" onSubmit={handleSubmit}>
       <input
         type="text"
         name="name"
-        placeholder="Nombre del producto"
+        placeholder="nombre del producto"
         onChange={handleChange}
       />
       <input
         type="text"
         name="price"
-        placeholder="Precio del producto"
+        placeholder="precio del producto"
         onChange={handleChange}
       />
       <input
